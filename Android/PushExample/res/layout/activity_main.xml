@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
@@ -6,25 +6,20 @@
     android:background="@drawable/dark"
     android:orientation="vertical"
     tools:context=".MainActivity" >
-    
-    <ProgressBar android:id="@+id/progress_horizontal"
-	style="?android:attr/progressBarStyleHorizontal"
-	android:layout_width="fill_parent"
-	android:layout_weight="0"
-	android:layout_height="5dp"
-	android:max="100"
-	android:visibility="gone"/>
-    
-    <uk.co.senab.actionbarpulltorefresh.extras.actionbarcompat.PullToRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ptr_webview"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-	android:layout_weight="1" >
-     	<WebView
-			android:id="@+id/webView1"
-        	android:layout_width="fill_parent"
-        	android:layout_height="fill_parent" />
 
-	</uk.co.senab.actionbarpulltorefresh.extras.actionbarcompat.PullToRefreshLayout>
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress_horizontal"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <WebView
+        android:id="@+id/webView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+</RelativeLayout>

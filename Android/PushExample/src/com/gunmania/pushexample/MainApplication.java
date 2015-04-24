@@ -1,12 +1,12 @@
 package com.gunmania.pushexample;
 
-import com.parse.Parse;
-import com.parse.PushService;
-
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
+import com.parse.Parse;
+import com.parse.PushService;
 
 public class MainApplication extends Application {	
 	private static MainApplication instance = new MainApplication();
@@ -23,7 +23,7 @@ public class MainApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		Parse.initialize(this, "YOUR_APP_ID", "YOUR_CLIENT_KEY");
+		Parse.initialize(this, "ce9XlOOEY3Z9HBy4VhCAJMk0XawhGokmmZYwn9s2", "WJOtBf6fuH1ETz9yQINP71LFx5dXGwqOTKo7JARP");
 		
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 		is_push =  pref.getBoolean("pushnotify", true);
