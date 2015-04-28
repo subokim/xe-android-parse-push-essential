@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+
+    compileOptions.encoding = "UTF-8"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'], exclude: ['android-support-*.jar'])
+        compile 'com.android.support:support-v4:20.0.0'
+        compile 'com.android.support:appcompat-v7:20.0.0'
+    }
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 19
+        versionCode getReleaseVersionCode()
+        versionName getReleaseVersionName()
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+
+        debug {
+            minifyEnabled false
+            zipAlignEnabled true
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+def getReleaseVersionCode() {
+    1
+}
+
+def getReleaseVersionName() {
+    "1.0.0"
+}
+
+dependencies {
+}
